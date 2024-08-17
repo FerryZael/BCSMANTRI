@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BC SMAN </title>
+    <title>Turnamen Badminton Kemerdekaan</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@700&display=swap" rel="stylesheet">
@@ -175,6 +175,39 @@
             border: 3px solid #FFD700;
             box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
         }
+
+        /* Tambahkan gaya baru untuk menu responsif */
+        .menu-toggle {
+            display: none;
+            cursor: pointer;
+            font-size: 1.5em;
+            padding: 10px;
+        }
+
+        @media screen and (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+
+            nav ul {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                width: 100%;
+                background-color: rgba(0, 0, 0, 0.8);
+                padding: 20px;
+            }
+
+            nav ul.show {
+                display: flex;
+            }
+
+            nav ul li {
+                margin: 10px 0;
+            }
+        }
     </style>
 </head>
 <body>
@@ -182,7 +215,10 @@
         <div class="container">
             <h1 style="font-family: 'Raleway', sans-serif;"><i class="fas fa-shuttlecock"></i> Turnamen Badminton Kemerdekaan </h1>
             <nav>
-                <ul>
+                <div class="menu-toggle" id="mobile-menu">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <ul id="nav-menu">
                     <li><a href="#about"><i class="fas fa-info-circle"></i> Tentang</a></li>
                     <li><a href="#about-us"><i class="fas fa-users"></i> Tentang Kami</a></li>
                     <li><a href="#registration"><i class="fas fa-user-plus"></i> Pendaftaran</a></li>
@@ -224,7 +260,7 @@
                 <div class="feature" style="margin-bottom: 20px;">
                     <i class="fas fa-map-marker-alt"></i>
                     <h3>NAMA GOR</h3>
-                    <p>Diselenggarakan di GOR satria</p>
+                    <p>Diselenggarakan di GOR satria mahatir</p>
                 </div>
             </div>
         </div>
@@ -272,7 +308,7 @@
             <p>Untuk mendaftar, silakan klik tombol di bawah ini:</p>
             <a href="https://forms.gle/B5oWJ2N6nC7LPc149" class="cta-button" target="_blank"><i class="fas fa-paper-plane"></i> Daftar Sekarang!</a>
             <div class="registration-box">
-                <img src="logo 1 badmin.jpg" alt="Logo Badminton" class="registration-logo">
+                <img src="logo bc 2.jpg" alt="Logo Badminton" class="registration-logo">
                 <img src="poster bc.jpg" alt="Poster Turnamen" class="registration-poster">
             </div>
         </div>
@@ -326,6 +362,23 @@
             let moveX = (e.pageX * -1 / depth);
             let moveY = (e.pageY * -1 / depth);
             document.body.style.backgroundPosition = moveX + 'px ' + moveY + 'px';
+        });
+
+        // Tambahkan kode untuk menu toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            const navMenu = document.getElementById('nav-menu');
+
+            mobileMenu.addEventListener('click', function() {
+                navMenu.classList.toggle('show');
+            });
+
+            // Menutup menu saat item menu diklik
+            navMenu.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    navMenu.classList.remove('show');
+                }
+            });
         });
     </script>
 </body>
