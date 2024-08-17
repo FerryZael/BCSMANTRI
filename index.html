@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Turnamen Badminton Kemerdekaan</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@700&display=swap" rel="stylesheet">
+    <style>
+        .hero {
+            background-image: url('gambar\ miring\ 1.jpg');
+            background-size: 95% auto;
+            background-position: center;
+        }
+        .logo {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            width: 100px;
+            height: auto;
+            animation: float 3s ease-in-out infinite;
+            z-index: 1000;
+            background: none;
+        }
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        body {
+            animation: fadeIn 1.5s ease-in-out;
+        }
+        .slide-in {
+            animation: slideIn 1s ease-out;
+        }
+        @keyframes slideIn {
+            from { transform: translateY(-50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        .registration-box {
+            padding: 20px;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 20px auto 0;
+            min-height: 400px;
+            max-width: 300px;
+        }
+        .registration-logo {
+            width: 150px;
+            height: auto;
+            margin-bottom: 20px;
+        }
+        .registration-poster {
+            max-width: 100%;
+            height: auto;
+            margin-top: 20px;
+            background-color: black;
+            padding: 10px;
+            border-radius: 10px;
+        }
+        .cta-button {
+            margin-bottom: 20px;
+        }
+        h1 {
+            text-shadow: 2px 2px 0 #ff0000, 4px 4px 0 #00ff00, 6px 6px 0 #0000ff;
+            transform: perspective(500px) rotateX(10deg);
+            transition: transform 0.3s;
+        }
+        h1:hover {
+            transform: perspective(500px) rotateX(0deg);
+        }
+        .cta-button {
+            transform: perspective(500px) rotateY(15deg);
+            transition: transform 0.3s;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+        .cta-button:hover {
+            transform: perspective(500px) rotateY(0deg);
+        }
+        .feature {
+            transform: perspective(1000px) rotateY(10deg);
+            transition: transform 0.3s;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+        .feature:hover {
+            transform: perspective(1000px) rotateY(0deg);
+        }
+        .timeline {
+            transform: perspective(1000px) rotateX(5deg);
+            transition: transform 0.3s;
+        }
+        .timeline:hover {
+            transform: perspective(1000px) rotateX(0deg);
+        }
+        footer {
+            transform: perspective(1000px) rotateX(-5deg);
+            transition: transform 0.3s;
+        }
+        footer:hover {
+            transform: perspective(1000px) rotateX(0deg);
+        }
+        @media screen and (max-width: 768px) {
+            .container {
+                width: 95%;
+                padding: 0 10px;
+            }
+            h1, h2 {
+                font-size: 1.5em;
+            }
+            nav ul {
+                flex-direction: column;
+            }
+            .feature {
+                width: 100%;
+            }
+            .cta-button {
+                font-size: 0.9em;
+                padding: 10px 15px;
+            }
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        @media screen and (max-width: 600px) {
+            nav ul {
+                display: none;
+            }
+            .menu-toggle {
+                display: block;
+            }
+        }
+        .about-us-3d {
+            perspective: 1000px;
+        }
+        .about-us-content {
+            transform-style: preserve-3d;
+            transition: transform 0.5s;
+        }
+        .about-us-content:hover {
+            transform: rotateY(5deg);
+        }
+        .about-us-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transform: translateZ(20px);
+            transition: transform 0.3s;
+        }
+        .about-us-card:hover {
+            transform: translateZ(30px) scale(1.05);
+        }
+        .about-us-icon {
+            font-size: 2em;
+            color: #FFD700;
+            margin-bottom: 10px;
+            transform: translateZ(40px);
+        }
+        .about-us-photo {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 10px;
+            border: 3px solid #FFD700;
+            box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+        }
+    </style>
+</head>
+<body>
+    <header class="slide-in">
+        <div class="container">
+            <h1 style="font-family: 'Raleway', sans-serif;"><i class="fas fa-shuttlecock"></i> Turnamen Badminton Kemerdekaan </h1>
+            <nav>
+                <ul>
+                    <li><a href="#about"><i class="fas fa-info-circle"></i> Tentang</a></li>
+                    <li><a href="#about-us"><i class="fas fa-users"></i> Tentang Kami</a></li>
+                    <li><a href="#registration"><i class="fas fa-user-plus"></i> Pendaftaran</a></li>
+                    <li><a href="#schedule"><i class="fas fa-calendar-alt"></i> Jadwal</a></li>
+                    <li><a href="#contact"><i class="fas fa-envelope"></i> Kontak</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero slide-in">
+        <div class="container">
+            <h2 style="font-family: 'Montserrat', sans-serif; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; text-shadow: 2px 2px 4px rgba(0,0,0,0.5);">Rayakan Semangat Kemerdekaan dengan Badminton!</h2>
+            <p>Bergabunglah dalam turnamen badminton terbesar untuk memperingati HUT RI ke-79</p>
+            <a href="https://forms.gle/B5oWJ2N6nC7LPc149" class="cta-button pulse" target="_blank">Daftar Sekarang!</a>
+        </div>
+    </section>
+
+    <section id="about" class="about slide-in">
+        <div class="container">
+            <h2><i class="fas fa-flag"></i> Tentang Turnamen</h2>
+            <p>Turnamen Badminton Kemerdekaan 2024 adalah ajang prestisius yang diadakan untuk memunculkan rasa nasionalisme dalam merayakan kemerdekaan Indonesia. Melalui perlombaan ini, kita tidak hanya memperingati jasa para pahlawan, tetapi juga berjuang dalam semangat kompetisi yang sehat. Turnamen ini menjadi wadah bagi kita untuk menunjukkan semangat juang dan persatuan, seraya mengasah keterampilan dalam olahraga badminton. Mari bergabung dan rasakan kebanggaan menjadi bagian dari perayaan kemerdekaan yang penuh makna ini!</p>
+            <div class="features">
+                <div class="feature">
+                    <i class="fas fa-trophy"></i>
+                    <h3>Hadiah</h3>
+                    <p>banyak Hadiah menarik</p>
+                </div>
+                <div class="feature" style="margin-bottom: 20px;">
+                    <i class="fas fa-users"></i>
+                    <h3>Berbagai Kategori</h3>
+                    <p>Tunggal Putra, Ganda Putra, Ganda Putri</p>
+                </div>
+                <div class="feature" style="margin-bottom: 20px;">
+                    <i class="fas fa-layer-group"></i>
+                    <h3>Berbagai Tingkatan</h3>
+                    <p>Grup A (sudah jago), Grup B (sedang), Grup C (pemula). Khusus Tunggal Putra akan otomatis masuk grup A</p>
+                </div>
+                <div class="feature" style="margin-bottom: 20px;">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h3>NAMA GOR</h3>
+                    <p>Diselenggarakan di GOR satria mahatir</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about-us" class="about-us slide-in about-us-3d">
+        <div class="container">
+            <h2><i class="fas fa-users"></i> Tentang Kami</h2>
+            <div class="about-us-content">
+                <div class="about-us-card">
+                    <i class="fas fa-bullhorn about-us-icon"></i>
+                    <h3>Ekstrakurikuler Badminton SMANTRI</h3>
+                    <p>
+                        Wadah bagi siswa dan siswi untuk mengembangkan bakat serta potensi di bidang olahraga badminton. Kami menciptakan lingkungan yang mendukung pertumbuhan atlet muda dengan semangat dan dedikasi tinggi.
+                    </p>
+                </div>
+                <div class="about-us-card">
+                    <img src="foto ketua bc.jpg" alt="Muhammad Ferry Zael Saputra" class="about-us-photo">
+                    <h3>Muhammad Ferry Zael Saputra - Ketua</h3>
+                    <p>
+                        Seorang pemimpin dengan visi dan komitmen kuat untuk membangun tim yang solid dan kompetitif. Kehadirannya yang aktif dalam setiap sesi latihan dan turnamen memberikan teladan nyata bagi seluruh anggota.
+                    </p>
+                </div>
+                <div class="about-us-card">
+                    <img src="foto wakil bc.jpg" alt="Tiara May Arista" class="about-us-photo">
+                    <h3>Tiara May Arista - Wakil Ketua</h3>
+                    <p>
+                        Dengan energi dan kreativitasnya, Tiara merancang program-program latihan inovatif yang membantu anggota meningkatkan kemampuan dan tumbuh sebagai individu yang disiplin dan bertanggung jawab.
+                    </p>
+                </div>
+                <div class="about-us-card">
+                    <i class="fas fa-trophy about-us-icon"></i>
+                    <h3>Visi Kami</h3>
+                    <p>
+                        Kami percaya bahwa dengan kerja keras, dedikasi, dan semangat tim yang kuat, Ekstrakurikuler Badminton SMANTRI mampu mencetak prestasi di tingkat nasional dan internasional, sambil membentuk generasi muda yang tangguh dan berprestasi.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="registration" class="registration slide-in">
+        <div class="container">
+            <h2><i class="fas fa-clipboard-list"></i> Pendaftaran</h2>
+            <p>Untuk mendaftar, silakan klik tombol di bawah ini:</p>
+            <a href="https://forms.gle/B5oWJ2N6nC7LPc149" class="cta-button" target="_blank"><i class="fas fa-paper-plane"></i> Daftar Sekarang!</a>
+            <div class="registration-box">
+                <img src="logo bc 2.jpg" alt="Logo Badminton" class="registration-logo">
+                <img src="poster bc.jpg" alt="Poster Turnamen" class="registration-poster">
+            </div>
+        </div>
+    </section>
+
+    <section id="schedule" class="schedule slide-in">
+        <div class="container">
+            <h2><i class="fas fa-calendar-alt"></i> Jadwal Turnamen</h2>
+            <div class="timeline">
+                <div class="event">
+                    <div class="date">20 Agustus</div>
+                    <div class="description">Braket online </div>
+                </div>
+                <div class="event">
+                    <div class="date">24 Agustus - Selesai</div>
+                    <div class="description">Turnamen berlangsung</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact slide-in" style="font-family: 'Oswald', sans-serif;">
+        <div class="container">
+            <h2><i class="fas fa-phone-alt"></i> Kontak Kami</h2>
+            <p>Untuk informasi lebih lanjut, silakan hubungi kami:</p>
+            <div class="contact-info">
+                <p><i class="fab fa-whatsapp"></i> WhatsApp Tiara: <a href="https://wa.me/6285156356523">0851-5635-6523</a></p>
+                <p><i class="fab fa-whatsapp"></i> WhatsApp Zael: <a href="https://wa.me/6281281091257">0812-8109-1257</a></p>
+                <p><i class="fab fa-whatsapp"></i> WhatsApp Nurul: <a href="https://wa.me/6281212470233">0812-1247-0233</a></p>
+                <p><i class="fab fa-whatsapp"></i> WhatsApp Feby: <a href="https://wa.me/6281316423505">0813-1642-3505</a></p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="slide-in">
+        <div class="container">
+            <div class="footer-content">
+                <div class="social-media">
+                    <a href="https://www.tiktok.com/@badminton.smantri?_t=8omfwJmEj0j&_r=1" target="_blank"><i class="fab fa-tiktok"></i></a>
+                    <a href="https://www.instagram.com/badminton.smantri?igsh=MW5hZG5nOWwzcXN4ZA==" target="_blank"><i class="fab fa-instagram"></i></a>
+                </div>
+                <p>&copy; BADMINTON SMANTRI</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('mousemove', function(e) {
+            let depth = 5;
+            let moveX = (e.pageX * -1 / depth);
+            let moveY = (e.pageY * -1 / depth);
+            document.body.style.backgroundPosition = moveX + 'px ' + moveY + 'px';
+        });
+    </script>
+</body>
+</html>
